@@ -133,3 +133,39 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Floating Animation Keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* Floating Animation Classes */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 3.5s ease-in-out infinite 1s;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 3s ease-in-out infinite 0.5s;
+}
