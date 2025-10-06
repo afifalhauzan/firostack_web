@@ -1,6 +1,7 @@
 // Motion variants for consistent animations across components
+import type { Variants } from 'motion/react';
 
-export const slideUpVariants = {
+export const slideUpVariants: Variants = {
   hidden: { 
     opacity: 0, 
     y: 60 
@@ -10,25 +11,24 @@ export const slideUpVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: "easeOut"
+      ease: [0.25, 0.46, 0.45, 0.94] // easeOut cubic-bezier
     }
   }
 };
-
-export const fadeInVariants = {
+export const fadeInVariants: Variants = {
   hidden: { 
     opacity: 0 
   },
   visible: { 
     opacity: 1,
     transition: {
-      duration: 0.6,
-      ease: "easeOut"
+      duration: 0.8,
+      ease: [0.25, 0.46, 0.45, 0.94] // easeOut cubic-bezier
     }
   }
 };
 
-export const scaleInVariants = {
+export const scaleInVariants: Variants = {
   hidden: { 
     opacity: 0, 
     scale: 0.8,
@@ -40,12 +40,12 @@ export const scaleInVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: "easeOut"
+      ease: [0.25, 0.46, 0.45, 0.94] // easeOut cubic-bezier
     }
   }
 };
 
-export const cardVariants = {
+export const cardVariants: Variants = {
   hidden: { 
     opacity: 0, 
     y: 50,
@@ -57,7 +57,7 @@ export const cardVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: "easeOut"
+      ease: [0.25, 0.46, 0.45, 0.94] // easeOut cubic-bezier
     }
   }
 };
