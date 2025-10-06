@@ -7,7 +7,7 @@ export default function Hero() {
     return (
         <section className="flex min-h-130 md:min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#1F2B4B] to-[#080D1C] text-white">
             <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-                <div className="max-w-lg text-left md:text-center items-center justify-center space-y-2 md:space-y-6 mb-16">
+                <div className="max-w-lg text-left md:text-center items-center justify-center space-y-2 md:space-y-6 mb-10">
                     <h1 className="text-5xl md:text-6xl font-bold">
                         Solusi{" "}
                         <TextType

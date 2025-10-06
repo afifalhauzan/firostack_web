@@ -1,15 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Img from "next/image";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact-us');
@@ -21,10 +18,35 @@ export default function Navbar() {
     }
     setIsMenuOpen(false); // Close mobile menu if open
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const heroHeight = window.innerHeight; // Approximate hero section height
+      
+      setIsScrolled(scrollPosition > heroHeight * 0.3); // Show background after scrolling 30% of viewport
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header className="bg-linear-80 sticky top-0 z-50 from-[#0B1122] to-[#222B46] text-white">
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+    <header className="fixed w-full top-0 z-50 text-white">
+      {/* Background Layer */}
+      <div
+        className={`absolute inset-0 bg-gradient-to-r from-[#0B1122] to-[#222B46] backdrop-blur-lg shadow-lg transition-opacity duration-500 -z-10 ${
+          isScrolled || isMenuOpen ? 'opacity-100' : 'opacity-0'
+        }`}
+      />
+
+      <div className="relative container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between w-full">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="flex items-center justify-center">
@@ -36,13 +58,13 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center space-x-10 font-semibold">
             <Link
               href="/"
-              className="text-white hover:text-blue-300 transition-colors duration-200"
+              className="text-white hover:text-indigo-300 transition-colors duration-200"
             >
               Jasa
             </Link>
             <Link
               href="/campus"
-              className="text-white hover:text-blue-300 transition-colors duration-200"
+              className="text-white hover:text-indigo-300 transition-colors duration-200"
             >
               Campus Ambassador
             </Link>
@@ -52,7 +74,7 @@ export default function Navbar() {
               </div>
               <Link
                 href="/idealabs"
-                className="bg-gradient-to-r from-[#F9F9FF] to-[#7E79FF] bg-clip-text text-transparent transition-colors duration-200"
+                className="bg-gradient-to-r from-[#F9F9FF] to-[#7E79FF] bg-clip-text text-transparent transition-colors duration-200 hover:bg-indigo-300"
               >
                 Idea Labs
               </Link>
@@ -91,7 +113,7 @@ export default function Navbar() {
           }`}>
           <nav className="px-2 pt-6 pb-4 space-y-2 ">
             <Link
-              href="/jasa"
+              href="/"
               className="block px-3 py-2 text-white hover:text-blue-300 hover:bg-slate-800 rounded-md transition-colors duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
