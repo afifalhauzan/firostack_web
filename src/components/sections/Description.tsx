@@ -9,7 +9,7 @@ export default function Description() {
         <section className="flex min-h-screen flex-col items-center justify-center bg-linear-290 from-[#2E1266] to-[#080D1C] text-white">
             <div className="container flex flex-col md:flex-row items-center justify-around gap-12 px-4 py-16">
                 <motion.div
-                    className="max-w-4xl text-left w-full md:w-1/2 space-y-12"
+                    className="max-w-4xl w-full md:w-xl text-justify space-y-12"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
