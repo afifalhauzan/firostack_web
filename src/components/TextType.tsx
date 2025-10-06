@@ -1,6 +1,7 @@
 'use client';
 
-import { ElementType, useEffect, useRef, useState, createElement, useMemo, useCallback } from 'react';
+import { useEffect, useRef, useState, createElement, useMemo, useCallback } from 'react';
+import type { ElementType } from 'react';
 import { gsap } from 'gsap';
 import './TextType.css';
 
@@ -104,6 +105,8 @@ const TextType = ({
     let timeout: NodeJS.Timeout;
 
     const currentText = textArray[currentTextIndex];
+    if (!currentText) return;
+
     const processedText = reverseMode ? currentText.split('').reverse().join('') : currentText;
 
     const executeTypingAnimation = () => {
@@ -114,13 +117,15 @@ const TextType = ({
             return;
           }
 
-          if (onSentenceComplete) {
-            onSentenceComplete(textArray[currentTextIndex], currentTextIndex);
+          if (onSentenceComplete && currentText) {
+            onSentenceComplete(currentText, currentTextIndex);
           }
 
           setCurrentTextIndex(prev => (prev + 1) % textArray.length);
           setCurrentCharIndex(0);
-          timeout = setTimeout(() => {}, pauseDuration);
+          timeout = setTimeout(() => {
+            // Start typing the next sentence after a brief pause
+          }, pauseDuration);
         } else {
           timeout = setTimeout(() => {
             setDisplayedText(prev => prev.slice(0, -1));
@@ -164,11 +169,12 @@ const TextType = ({
     isVisible,
     reverseMode,
     variableSpeed,
+    getRandomSpeed,
     onSentenceComplete
   ]);
 
   const shouldHideCursor =
-    hideCursorWhileTyping && (currentCharIndex < textArray[currentTextIndex].length || isDeleting);
+    hideCursorWhileTyping && textArray[currentTextIndex] && (currentCharIndex < textArray[currentTextIndex].length || isDeleting);
 
   return createElement(
     Component,
