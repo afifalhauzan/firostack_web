@@ -81,20 +81,20 @@ export default function Jasa() {
               variants={cardVariants}
               transition={{ delay: index * 0.1 }}
             >
-              {/* Card with rounded corners and gradient background */}
-              <div className="bg-gradient-to-br from-[#080D1C] to-[#18043F] rounded-3xl p-8 text-center space-y-4 border border-slate-600/30 hover:border-slate-500/50 transition-all duration-300 hover:transform hover:scale-103">
+              <div className="h-full bg-gradient-to-br from-[#080D1C] to-[#18043F] rounded-3xl p-8 text-center border border-slate-600/30 hover:border-slate-500/50 transition-all duration-300 hover:transform hover:scale-103 flex flex-col justify-between min-h-[350px]">
                 
-                {/* Service Title */}
-                <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">
-                  {service.title}
-                </h3>
+                {/* Content Section */}
+                <div className="space-y-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">
+                    {service.title}
+                  </h3>
+                  
+                  <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
                 
-                {/* Service Description */}
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-                  {service.description}
-                </p>
-                
-                {/* Pricing Section */}
+                {/* Pricing Section - Always at bottom */}
                 <div className="space-y-2 border-2 rounded-3xl border-[#262968] p-2 mt-8">
                   <div className="text-center">
                     <span className="text-lg font-semibold text-white block mb-2">

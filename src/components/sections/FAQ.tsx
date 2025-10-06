@@ -30,7 +30,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="flex min-h-170 flex-col items-center justify-start bg-gradient-to-b from-[#1F2B4B] to-[#080D1C] text-white">
+    <section className="flex min-h-170 flex-col items-center justify-start bg-gradient-to-b from-[#080D1C] to-[#1F2B4B] text-white">
       <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 mt-6">
         <motion.div 
           className="text-center space-y-4"
