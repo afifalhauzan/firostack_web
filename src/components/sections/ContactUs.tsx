@@ -1,17 +1,34 @@
 
+"use client";
+
+import { motion } from "motion/react";
+import { slideUpVariants } from "@/lib/motionVariants";
+
 export default function ContactUs() {
     return (
         <section id="contact-us" className="flex min-h-130 flex-col items-center justify-center bg-gradient-to-b from-[#1F2B4B] to-[#080D1C] text-white">
             <div className="container flex flex-col md:flex-row items-center justify-around gap-12 px-4 py-16">
-                <div className="text-center md:text-left space-y-4">
+                <motion.div 
+                    className="text-center md:text-left space-y-4"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={slideUpVariants}
+                >
                     <h2 className="text-4xl md:text-6xl font-bold">
                         Hubungi Kami
                     </h2>
                     <p className="text-lg md:text-xl text-gray-300 max-w-2xl">
                         Mari ciptakan solusi teknologi murah dan efektif bersama kami!
                     </p>
-                </div>
-                <div>
+                </motion.div>
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={slideUpVariants}
+                    transition={{ delay: 0.2 }}
+                >
                     <a 
                         href="https://wa.me/6285971883066?text=Halo%20FIROSTACK,%20saya%20tertarik%20dengan%20layanan%20teknologi%20Anda."
                         target="_blank"
@@ -31,7 +48,7 @@ export default function ContactUs() {
 
                         <h1 className="bg-gradient-to-r from-[#F9F9FF] to-[#7E79FF] bg-clip-text text-transparent transition-colors duration-200">Hubungi via WhatsApp</h1>
                     </a>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

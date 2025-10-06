@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "motion/react";
+import { slideUpVariants, cardVariants } from "@/lib/motionVariants";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -28,19 +30,30 @@ export default function FAQ() {
   };
 
   return (
-    <section className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#1F2B4B] to-[#080D1C] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-        <div className="text-center space-y-4">
+    <section className="flex min-h-170 flex-col items-center justify-start bg-gradient-to-b from-[#1F2B4B] to-[#080D1C] text-white">
+      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 mt-6">
+        <motion.div 
+          className="text-center space-y-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={slideUpVariants}
+        >
           <h2 className="text-4xl md:text-5xl font-bold">
             Frequently Asked Questions
           </h2>
-        </div>
+        </motion.div>
 
         <div className="max-w-4xl w-full space-y-4">
           {faqs.map((faq, index) => (
-            <div 
+            <motion.div 
               key={index} 
               className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl overflow-hidden"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={cardVariants}
+              transition={{ delay: index * 0.1 }}
             >
               <button
                 onClick={() => toggleFAQ(index)}
@@ -63,7 +76,7 @@ export default function FAQ() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

@@ -2,23 +2,9 @@
 
 import Img from "next/image";
 import { motion } from "motion/react";
+import { slideUpVariants } from "@/lib/motionVariants";
 
 export default function Description() {
-    const slideUpVariants = {
-        hidden: { 
-            opacity: 0, 
-            y: 60 
-        },
-        visible: { 
-            opacity: 1, 
-            y: 0,
-            transition: {
-                duration: 0.8,
-                ease: "easeOut"
-            }
-        }
-    };
-
     return (
         <section className="flex min-h-screen flex-col items-center justify-center bg-linear-290 from-[#2E1266] to-[#080D1C] text-white">
             <div className="container flex flex-col md:flex-row items-center justify-around gap-12 px-4 py-16">
