@@ -50,7 +50,7 @@ export default function Jasa() {
   ];
 
   return (
-    <section className="flex min-h-screen flex-col items-center justify-start bg-gradient-to-b from-[#1F2B4B] to-[#080D1C] text-white">
+    <section id="jasa" className="flex min-h-screen flex-col items-center justify-start bg-gradient-to-b from-[#1F2B4B] to-[#080D1C] text-white">
       <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 mt-4">
         <motion.div 
           className="text-center space-y-4"
@@ -81,7 +81,7 @@ export default function Jasa() {
               variants={cardVariants}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="h-full bg-gradient-to-br from-[#080D1C] to-[#18043F] rounded-3xl p-8 text-center border border-slate-600/30 hover:border-slate-500/50 transition-all duration-300 hover:transform hover:scale-103 flex flex-col justify-between min-h-[350px]">
+              <div className="h-min-5 md:h-full bg-gradient-to-br from-[#080D1C] to-[#18043F] rounded-3xl p-8 text-center border border-slate-600/30 hover:border-slate-500/50 transition-all duration-300 hover:transform hover:scale-103 flex flex-col justify-between">
                 
                 {/* Content Section */}
                 <div className="space-y-4">

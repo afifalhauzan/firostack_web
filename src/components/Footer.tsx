@@ -21,7 +21,7 @@ export default function Footer() {
                             </div>
 
                             {/* Tagline */}
-                            <div className="flex flex-col text-center md:text-left space-y-2">
+                            <div className="flex flex-col text-center md:text-left ml-4 space-y-2">
                                 <p className="text-white font-bold text-md">Solusi Teknologi Murahmu</p>
                                 <p className="text-white text-sm">#BuatTeknologiDiBawahSatuJuta</p>
                             </div>

@@ -2,21 +2,40 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import Img from "next/image";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact-us');
-    if (contactSection) {
-      contactSection.scrollIntoView({ 
+  const scrollToSection = (sectionId: string) => {
+    // If we're not on the home page, navigate there first
+    if (pathname !== '/') {
+      router.push(`/#${sectionId}`);
+      return;
+    }
+
+    // If we're on the home page, scroll directly
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
       });
     }
     setIsMenuOpen(false); // Close mobile menu if open
+  };
+
+  const scrollToContact = () => {
+    scrollToSection('contact-us');
+  };
+
+  const scrollToJasa = (e: React.MouseEvent) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    scrollToSection('jasa');
   };
 
   useEffect(() => {
@@ -30,6 +49,32 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Handle scrolling to section when page loads with hash
+  useEffect(() => {
+    const handleHashScroll = () => {
+      const hash = window.location.hash.substring(1);
+      if (hash && pathname === '/') {
+        // Small delay to ensure the page is fully loaded
+        setTimeout(() => {
+          const section = document.getElementById(hash);
+          if (section) {
+            section.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, 100);
+      }
+    };
+
+    // Handle initial load
+    handleHashScroll();
+
+    // Handle hash changes (back/forward navigation)
+    window.addEventListener('hashchange', handleHashScroll);
+    return () => window.removeEventListener('hashchange', handleHashScroll);
+  }, [pathname]);
 
   
   const toggleMenu = () => {
@@ -57,8 +102,9 @@ export default function Navbar() {
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-10 font-semibold">
             <Link
-              href="/"
+              href="#"
               className="text-white hover:text-indigo-300 transition-colors duration-200"
+              onClick={scrollToJasa}
             >
               Jasa
             </Link>
@@ -113,9 +159,9 @@ export default function Navbar() {
           }`}>
           <nav className="px-2 pt-6 pb-4 space-y-2 ">
             <Link
-              href="/"
+              href="#"
               className="block px-3 py-2 text-white hover:text-blue-300 hover:bg-slate-800 rounded-md transition-colors duration-200"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={scrollToJasa}
             >
               Jasa
             </Link>

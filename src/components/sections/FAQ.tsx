@@ -10,18 +10,18 @@ export default function FAQ() {
   const faqs = [
     {
       question: "Apakah client dapat melakukan pembayaran diakhir?",
-      answer: "Bisa banget! Tenang aja, kita ngerti kok kebutuhan mahasiswa dan para perintis. Sistemnya simpel: kamu cukup bayar DP 50% di awal, terus sisanya bisa dilunasin setelah project-nya beres."},
+      answer: "Bisa banget! Tenang aja, kita ngerti kok kebutuhan mahasiswa dan para perintis.\nSistemnya simpel: kamu cukup bayar DP 50% di awal, terus sisanya bisa dilunasin setelah project-nya beres."},
     {   
       question: "Apakah FiroStack juga dapat melakukan modifikasi terhadap aplikasi dan website yang sudah ada?",
-      answer: "Ya, kami memberikan garansi 3 bulan untuk bug fixing dan maintenance dasar. Selain itu, kami juga menyediakan paket maintenance bulanan untuk update dan pengembangan berkelanjutan."
+      answer: "Ya, kami memberikan garansi 3 bulan untuk bug fixing dan maintenance dasar.\nSelain itu, kami juga menyediakan paket maintenance bulanan untuk update dan pengembangan berkelanjutan."
     },
     {
       question: "Bagaimana cara melakukan pemesanan FiroStack?",
-      answer: "Gampang banget caranya! Ada dua cara nih: Lewat Halaman Jasa: Masuk ke bagian \"Jasa Kami\", pilih layanan yang kamu mau, terus klik tombol pesannya. Nanti kamu bakal langsung nyambung ke WhatsApp kita buat ngobrol-ngobrol. Lewat Tombol Kontak: Tinggal klik tombol \"Hubungi Kami\" di web, nanti langsung bisa chat sama tim FiroStack di WhatsApp."
+      answer: "Gampang banget caranya! Ada dua cara nih: \n\n1. Lewat Halaman Jasa: Masuk ke bagian \"Jasa Kami\", pilih layanan yang kamu mau, terus klik tombol pesannya. Nanti kamu bakal langsung nyambung ke WhatsApp kita buat ngobrol-ngobrol.\n2. Lewat Tombol Kontak: Tinggal klik tombol \"Hubungi Kami\" di web, nanti langsung bisa chat sama tim FiroStack di WhatsApp."
     },
     {
       question: "Bagaimana jika saya ingin bertanya lebih lanjut tentang layanan FiroStack?",
-      answer: "Kita seneng banget kalau kamu mau nanya-nanya. Gak usah sungkan, tanya apa aja bebas! Kamu bisa langsung pencet tombol \"Hubungi Kami\" atau kontak kita lewat info yang ada di web. Tim kita siap jawab semua pertanyaanmu, sekalian kita kasih konsul gratis buat ngebahas ide atau project yang pengen kamu bikin."
+      answer: "Kita seneng banget kalau kamu mau nanya-nanya. Gak usah sungkan, tanya apa aja bebas!\nKamu bisa langsung pencet tombol \"Hubungi Kami\" atau kontak kita lewat info yang ada di web. Tim kita siap jawab semua pertanyaanmu, sekalian kita kasih konsul gratis buat ngebahas ide atau project yang pengen kamu bikin."
     }
   ];
 
@@ -72,7 +72,7 @@ export default function FAQ() {
               } overflow-hidden`}>
                 <div className="px-6 pb-6">
                   <div className="border-t border-slate-600 pt-4">
-                    <p className="text-gray-300 text-sm md:text-base leading-relaxed">{faq.answer}</p>
+                    <p className="text-gray-300 text-sm md:text-base leading-relaxed whitespace-pre-line">{faq.answer}</p>
                   </div>
                 </div>
               </div>
