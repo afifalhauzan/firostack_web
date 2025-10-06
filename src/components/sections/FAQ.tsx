@@ -28,7 +28,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="flex min-h-screen flex-col items-center justify-start bg-gradient-to-b from-[#1F2B4B] to-[#080D1C] text-white">
+    <section className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#1F2B4B] to-[#080D1C] text-white">
       <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
         <div className="text-center space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">

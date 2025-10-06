@@ -7,12 +7,10 @@ import Img from "next/image";
 export default function Footer() {
     return (
         <footer className="bg-[#0A1021] text-white border-t border-slate-700">
-            <div className="container mx-auto px-6 py-8">
-                <div className="flex flex-col lg:items-center lg:justify-between space-y-4 lg:space-y-6">
+            <div className="container min-h-50 justify-center items-center mx-auto px-6 py-8">
+                <div className="flex flex-col lg:items-center lg:justify-center space-y-4 lg:space-y-6">
                     <div className="w-full flex flex-col lg:flex-row lg:items-center lg:justify-around space-y-6 lg:space-y-0">
-                        {/* Left Section - Logo and Tagline */}
                         <div className="flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-8">
-                            {/* Logo and Brand */}
                             <div className="flex items-center space-x-5">
                                 <div className="flex items-center justify-center">
                                     <Img src="/logo.svg" alt="Logo" width={70} height={70} />

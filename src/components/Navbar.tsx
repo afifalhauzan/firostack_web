@@ -10,8 +10,19 @@ export default function Navbar() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact-us');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    setIsMenuOpen(false); // Close mobile menu if open
+  };
   return (
-    <header className="bg-linear-80 from-[#0B1122] to-[#222B46] text-white">
+    <header className="bg-linear-80 sticky top-0 z-50 from-[#0B1122] to-[#222B46] text-white">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -22,7 +33,7 @@ export default function Navbar() {
           </Link>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-8 font-semibold">
+          <nav className="hidden md:flex items-center space-x-10 font-semibold">
             <Link
               href="/"
               className="text-white hover:text-blue-300 transition-colors duration-200"
@@ -46,12 +57,12 @@ export default function Navbar() {
                 Idea Labs
               </Link>
             </div>
-            <Link
-              href="/"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-200"
+            <button
+              onClick={scrollToContact}
+              className="inline-flex items-center justify-center gap-3 bg-[#0B1122] hover:bg-slate-700/90 border border-slate-600 hover:border-slate-500 text-white px-6 py-2 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer"
             >
-              Hubungi Kami
-            </Link>
+              <h1 className="bg-gradient-to-r from-[#F9F9FF] to-[#79afff] bg-clip-text text-transparent transition-colors duration-200">Hubungi Kami</h1>
+            </button>
           </nav>
 
           {/* Mobile menu button */}
@@ -78,7 +89,7 @@ export default function Navbar() {
         {/* Mobile Navigation Menu */}
         <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}>
-          <nav className="px-2 pt-2 pb-4 space-y-1">
+          <nav className="px-2 pt-6 pb-4 space-y-2 ">
             <Link
               href="/jasa"
               className="block px-3 py-2 text-white hover:text-blue-300 hover:bg-slate-800 rounded-md transition-colors duration-200"
@@ -99,24 +110,22 @@ export default function Navbar() {
                 className="flex items-center space-x-2 text-white hover:text-blue-300 transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <div className="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
-                  <span className="text-slate-900 text-sm">💡</span>
+                <div className="bg-gradient-to-r from-[#F9F9FF] to-[#7E79FF] bg-clip-text text-transparent transition-colors duration-200">
+                  <span className="text-slate-900 text-sm">💡</span> Idea Labs
                 </div>
-                <span>Idea Labs</span>
               </Link>
             </div>
             <div className="px-3 py-2">
-              <Link
-                href="/contact"
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
+              <button
+                onClick={scrollToContact}
+                className="inline-block bg-[#0B1122] hover:bg-slate-700/90 border border-slate-600 hover:border-slate-500 text-white px-6 py-2 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer"
               >
-                Hubungi Kami
-              </Link>
+                <h1 className="bg-gradient-to-r from-[#F9F9FF] to-[#79afff] bg-clip-text text-transparent transition-colors duration-200">Hubungi Kami</h1>
+              </button>
             </div>
           </nav>
         </div>
       </div>
-    </header>
+    </header >
   );
 }
