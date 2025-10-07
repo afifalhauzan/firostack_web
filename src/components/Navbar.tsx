@@ -12,7 +12,6 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const scrollToSection = (sectionId: string) => {
-    // If we're not on the home page, navigate there first
     if (pathname !== '/') {
       router.push(`/#${sectionId}`);
       return;

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import TextType from '@/components/TextType';
 import Img from "next/image";
 import { motion } from "framer-motion";
-import { MessageCircleMore } from "lucide-react";
+import { IoChatbubbleEllipsesSharp } from "react-icons/io5";
 
 export default function Hero() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,7 +71,7 @@ export default function Hero() {
             </div>
             <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
 
-                <div className="max-w-lg text-left md:text-center items-center justify-center space-y-2 md:space-y-6 mb-10 z-10">
+                <div className="max-w-lg text-left px-4 md:px-0 md:text-center items-center justify-center space-y-2 md:space-y-6 mb-2 z-10">
                     <h1 className="text-5xl md:text-6xl font-bold">
                         Solusi{" "}
                         <TextType
@@ -99,7 +99,7 @@ export default function Hero() {
                         text-white px-6 py-2 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105
                         shadow-[0_0px_35px_rgba(0,0,0,0.25)] hover:shadow-xl inset-shadow-lg inset-shadow-blue-500 shadow-purple-400/20 cursor-pointer"
                     >
-                        <MessageCircleMore />
+                        <IoChatbubbleEllipsesSharp className="w-6 h-6" />
                         <h1 className="bg-gradient-to-r from-[#F9F9FF] to-[#d4b2fb] bg-clip-text text-transparent transition-colors duration-200">Mulai Konsultasi Gratis</h1>
                     </button>
                 </div>

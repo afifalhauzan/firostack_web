@@ -6,8 +6,8 @@ import { slideUpVariants } from "@/lib/motionVariants";
 
 export default function ContactUs() {
     return (
-        <section id="contact-us" className="flex min-h-130 flex-col items-center justify-center bg-gradient-to-b from-[#1F2B4B] to-[#080D1C] text-white">
-            <div className="container flex flex-col md:flex-row items-center justify-around gap-12 px-4 py-16">
+        <section id="contact-us" className="flex min-h-90 flex-col items-center justify-center bg-gradient-to-b from-[#1F2B4B] to-[#080D1C] text-white">
+            <div className="container flex flex-col md:flex-row items-center justify-around gap-12 px-6 py-16 pb-30 md:pb-40">
                 <motion.div 
                     className="text-center md:text-left space-y-4"
                     initial="hidden"
