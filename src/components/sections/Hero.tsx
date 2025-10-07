@@ -45,7 +45,7 @@ export default function Hero() {
             <div className="hidden md:block absolute bottom-40 -right-0 z-0 opacity-30">
                 <Img src="/hero_line_2.svg" alt="Idealabs Logo" width={400} height={300} className="h-30 md:h-35 mt-2" />
             </div>
-            <div className="absolute bottom-75 left-5 md:bottom-20 md:left-20 z-0">
+            <div className="absolute bottom-30 left-5 md:bottom-20 md:left-20 z-0">
                 <motion.div
                     animate={{
                         rotate: [-15, 15, -15, 15, -15],
