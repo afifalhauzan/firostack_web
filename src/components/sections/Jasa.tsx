@@ -72,7 +72,7 @@ export default function Jasa() {
           transition={{ staggerChildren: 0.1 }}
         >
           {services.map((service, index) => {
-            const whatsappMessage = `Halo%20FIROSTACK,%20saya%20tertarik%20dengan%20layanan%20${encodeURIComponent(service.title)}%20teknologi%20Anda.`;
+            const whatsappMessage = `Halo%20FIROSTACK,%20saya%20tertarik%20dengan%20layanan%20teknologi%20${encodeURIComponent(service.title)}%20Anda.`;
             const whatsappUrl = `https://wa.me/6285971883066?text=${whatsappMessage}`;
             
             return (
