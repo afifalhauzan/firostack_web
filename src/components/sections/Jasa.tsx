@@ -16,36 +16,36 @@ export default function Jasa() {
       icon: "📱",
       title: "Web Development", 
       description: "Pembuatan website, e-commerce, dan sistem informasi",
-      originalPrice: "Rp. 2.000.000",
-      discountPrice: "Rp. 1.200.000"
+      originalPrice: "Rp. 1.200.000",
+      discountPrice: "Rp. 900.000"
     },
     {
       icon: "🛒",
       title: "Artificial Intelligence",
       description: "Pembuatan AI citra, suara.",
       originalPrice: "Rp. 1.800.000",
-      discountPrice: "Rp. 1.100.000"
+      discountPrice: "Rp. 900.000"
     },
     {
       icon: "⚙️",
       title: "Hardware & IoT",
       description: "Solusi perangkat keras dan Internet of Things.",
-      originalPrice: "Rp. 2.500.000",
-      discountPrice: "Rp. 1.500.000"
+      originalPrice: "Rp. 1.800.000",
+      discountPrice: "Rp. 990.000"
     },
     {
       icon: "⚙️",
       title: "Network & CCTV Installation",
       description: "Instalasi jaringan dan sistem keamanan CCTV.",
-      originalPrice: "Rp. 2.500.000",
-      discountPrice: "Rp. 1.500.000"
+      originalPrice: "Rp. 1.700.000",
+      discountPrice: "Rp. 900.000"
     },
     {
       icon: "⚙️",
       title: "Custom Software",
       description: "Pengembangan perangkat lunak sesuai kebutuhan spesifik.",
-      originalPrice: "Rp. 2.500.000",
-      discountPrice: "Rp. 1.500.000"
+      originalPrice: "Rp. 1.500.000",
+      discountPrice: "Rp. 950.000"
     }
   ];
 
