@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { LazyMotion, domAnimation, m } from "motion/react";
 import { slideUpVariants, cardVariants } from "@/lib/motionVariants";
 
 export default function Jasa() {
@@ -50,21 +50,22 @@ export default function Jasa() {
   ];
 
   return (
-    <section id="jasa" className="flex min-h-screen flex-col items-center justify-start bg-gradient-to-b from-[#1F2B4B] to-[#080D1C] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 mt-4">
-        <motion.div 
-          className="text-center space-y-4"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={slideUpVariants}
-        >
+    <LazyMotion features={domAnimation}>
+      <section id="jasa" className="flex min-h-screen flex-col items-center justify-start bg-gradient-to-b from-[#1F2B4B] to-[#080D1C] text-white">
+        <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 mt-4">
+          <m.div 
+            className="text-center space-y-4"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={slideUpVariants}
+          >
           <h2 className="text-4xl md:text-5xl font-bold">
             Jasa Kami
           </h2>
-        </motion.div>
+          </m.div>
 
-        <motion.div 
+        <m.div 
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl w-full"
           initial="hidden"
           whileInView="visible"
@@ -76,7 +77,7 @@ export default function Jasa() {
             const whatsappUrl = `https://wa.me/6285971883066?text=${whatsappMessage}`;
             
             return (
-              <motion.div 
+              <m.div 
                 key={index} 
                 className="relative"
                 initial="hidden"
@@ -124,11 +125,12 @@ export default function Jasa() {
                     </div>
                   </div>
                 </a>
-              </motion.div>
+              </m.div>
             );
           })}
-        </motion.div>
+        </m.div>
       </div>
     </section>
+    </LazyMotion>
   );
 }

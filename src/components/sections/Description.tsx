@@ -1,36 +1,37 @@
 "use client";
 
 import Img from "next/image";
-import { motion } from "motion/react";
+import { LazyMotion, domAnimation, m } from "motion/react";
 import { slideUpVariants } from "@/lib/motionVariants";
 
 export default function Description() {
     return (
-        <section className="flex min-h-screen flex-col items-center justify-center bg-linear-290 from-[#2E1266] to-[#080D1C] text-white">
-            <div className="container flex flex-col md:flex-row items-center justify-around gap-12 px-6 md:pb-16 py-16">
-                <motion.div
-                    className="max-w-4xl w-full md:w-xl text-justify space-y-12"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.3 }}
-                    variants={slideUpVariants}
-                >
-                    <motion.div
-                        className="space-y-4"
+        <LazyMotion features={domAnimation}>
+            <section className="flex min-h-screen flex-col items-center justify-center bg-linear-290 from-[#2E1266] to-[#080D1C] text-white">
+                <div className="container flex flex-col md:flex-row items-center justify-around gap-12 px-6 md:pb-16 py-16">
+                    <m.div
+                        className="max-w-4xl w-full md:w-xl text-justify space-y-12"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.3 }}
                         variants={slideUpVariants}
-                        transition={{ delay: 0.2 }}
                     >
+                        <m.div
+                            className="space-y-4"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
+                            variants={slideUpVariants}
+                            transition={{ delay: 0.2 }}
+                        >
                         <h2 className="text-4xl md:text-5xl font-bold">
                             Punya Ide Brilian?
                         </h2>
                         <h2 className="text-xl text-left md:text-2xl ">
                             Jangan Biarkan Biaya Menghalangimu
                         </h2>
-                    </motion.div>
-                    <motion.div
+                    </m.div>
+                    <m.div
                         className="space-y-4"
                         initial="hidden"
                         whileInView="visible"
@@ -55,10 +56,10 @@ export default function Description() {
                             </p>
                         </div>
 
-                    </motion.div>
-                </motion.div>
+                    </m.div>
+                </m.div>
                 <div className="w-full md:w-1/2 relative flex items-center justify-center h-96">
-                    <motion.div
+                    <m.div
                         whileInView={{ opacity: 1, y: 0 }}
                         animate={{ opacity: [0.4, 0.8, 0.4] }}
                         transition={{ 
@@ -74,8 +75,8 @@ export default function Description() {
                             height={80}
                             className="absolute top-10 left-10 animate-float-slow"
                         />
-                    </motion.div>
-                    <motion.div
+                    </m.div>
+                    <m.div
                         whileInView={{ opacity: 1, y: 0 }}
                         animate={{ opacity: [0.3, 0.7, 0.3] }}
                         transition={{ 
@@ -91,10 +92,10 @@ export default function Description() {
                             height={60}
                             className="absolute bottom-16 left-16 animate-float-delay"
                         />
-                    </motion.div>
+                    </m.div>
 
                     {/* Main laptop - centered */}
-                    <motion.div
+                    <m.div
                         initial={{ opacity: 0, scale: 0.8, y: 30 }}
                         whileInView={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.2 }}
@@ -107,10 +108,10 @@ export default function Description() {
                             height={300}
                             className="relative z-10 w-80 h-80 md:w-96 md:h-96"
                         />
-                    </motion.div>
+                    </m.div>
 
                     {/* Foreground floating squares */}
-                    <motion.div
+                    <m.div
                         whileInView={{ opacity: 1, y: 0 }}
                         animate={{ opacity: [0.5, 0.9, 0.5] }}
                         transition={{ 
@@ -126,8 +127,8 @@ export default function Description() {
                             height={70}
                             className="absolute top-20 right-8 animate-float z-20"
                         />
-                    </motion.div>
-                    <motion.div
+                    </m.div>
+                    <m.div
                         whileInView={{ opacity: 1, y: 0 }}
                         animate={{ opacity: [0.4, 0.8, 0.4] }}
                         transition={{ 
@@ -143,9 +144,10 @@ export default function Description() {
                             height={50}
                             className="absolute bottom-12 right-20 animate-float-reverse z-20"
                         />
-                    </motion.div>
+                    </m.div>
                 </div>
             </div>
         </section>
+        </LazyMotion>
     );
 }

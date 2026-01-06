@@ -4,6 +4,9 @@ import { GeistSans } from 'geist/font/sans';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+// Configure font with display swap for better performance
+const geistSans = GeistSans.className;
+
 export const metadata: Metadata = {
   title: {
     default: "FIROSTACK - Teknologi di Bawah Satu Juta | Jasa Website & Aplikasi",
@@ -62,8 +65,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="id" className={`${GeistSans.variable}`}>
+    <html lang="id" className={geistSans}>
       <head>
+        <link rel="preload" href="/hero_line.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/hero_line_2.svg" as="image" type="image/svg+xml" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
