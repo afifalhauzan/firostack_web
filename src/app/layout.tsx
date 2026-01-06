@@ -10,23 +10,23 @@ export const metadata: Metadata = {
     template: "%s | FIROSTACK"
   },
   description: "FIROSTACK menyediakan jasa pembuatan website, aplikasi mobile, AI, dan IoT dengan harga terjangkau di bawah 1 juta. Cocok untuk mahasiswa, UMKM, dan startup.",
-  
+
   keywords: ["jasa pembuatan website", "jasa aplikasi mobile", "web development murah", "jasa IT malang", "startup teknologi", "FIROSTACK", "teknologi di bawah satu juta"],
-  
+
   authors: [{ name: "FIROSTACK Team", url: "https://firostack.tech" }],
   creator: "FIROSTACK",
   publisher: "FIROSTACK",
-  
+
   // Robots sudah default index & follow, tapi ini untuk kontrol lebih
   robots: {
     index: true,
     follow: true,
   },
-  
+
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://firostack.tech", 
+    url: "https://firostack.tech",
     title: "FIROSTACK - Jasa Pembuatan Website & Aplikasi Terjangkau",
     description: "Wujudkan ide teknologi Anda dengan FIROSTACK! Jasa pembuatan website, aplikasi mobile, AI, dan IoT. Mulai dari di bawah Rp 1 Juta.",
     siteName: "FIROSTACK",
@@ -39,17 +39,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-  
+
   // Kode verifikasi untuk Google Search Console, dll.
   verification: {
     google: "your-google-verification-code", // Isi dengan kode Anda nanti
   },
-  
+
   // URL utama website Anda
   alternates: {
     canonical: "https://firostack.tech",
   },
-  
+
   icons: {
     icon: "/favicon.ico",
     shortcut: '/favicon-16x16.png',
@@ -69,17 +69,29 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
+              "@type": "ProfessionalService",
               "name": "FIROSTACK",
               "url": "https://firostack.tech",
               "logo": "https://firostack.tech/logo.svg",
+              "image": "https://firostack.tech/og-image.png",
+              "description": "FIROSTACK menyediakan jasa pembuatan website, aplikasi mobile, AI, dan IoT dengan harga terjangkau di bawah 1 juta untuk mahasiswa, UMKM, dan startup.",
+              "telephone": "+62-859-7188-3066",
+              "priceRange": "Rp500.000 - Rp1.000.000",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Malang",
+                "addressRegion": "Jawa Timur",
+                "addressCountry": "ID"
+              },
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+62-859-7188-3066", // Ganti dengan nomor WA Anda
-                "contactType": "customer service"
+                "telephone": "+62-859-7188-3066",
+                "contactType": "customer service",
+                "areaServed": "ID",
+                "availableLanguage": ["Indonesian", "English"]
               },
               "sameAs": [
-                // Isi dengan URL media sosial Anda yang sebenarnya
+                "https://www.instagram.com/pt.firostack.tech/"
               ]
             })
           }}
