@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "FIROSTACK",
     images: [
       {
-        url: "/logo.svg", // Ganti ke .png atau .jpg sesuai file Anda
+        url: "https://firostack.tech/og-image.png", // Ganti ke .png atau .jpg sesuai file Anda
         width: 1200,
         height: 630,
         alt: "Firostack - Jasa Teknologi Terjangkau",
