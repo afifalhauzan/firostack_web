@@ -41,10 +41,10 @@ export default function Hero() {
     return (
         <section className="flex min-h-150 md:min-h-screen  flex-col items-center justify-center bg-gradient-to-b from-[#1F2B4B] to-[#080D1C] text-white">
             <div className="hidden md:block md:absolute top-30 -left-10 z-0">
-                <Img src="/hero_line.svg" alt="Idealabs Logo" width={400} height={300} className="h-30 md:h-35 mt-2" />
+                <Img src="/hero_line.svg" alt="Jasa pembuatan website murah di Malang - FIROSTACK" width={400} height={300} className="h-30 md:h-35 mt-2" />
             </div>
             <div className="hidden md:block absolute bottom-40 -right-0 z-0 opacity-30">
-                <Img src="/hero_line_2.svg" alt="Idealabs Logo" width={400} height={300} className="h-30 md:h-35 mt-2" />
+                <Img src="/hero_line_2.svg" alt="Landing page mahasiswa - Teknologi di bawah satu juta" width={400} height={300} className="h-30 md:h-35 mt-2" />
             </div>
             <div className="absolute bottom-30 left-5 md:bottom-20 md:left-20 z-0">
                 <motion.div
@@ -60,7 +60,7 @@ export default function Hero() {
                 >
                     <Img 
                         src="hero_code.svg" 
-                        alt="FIROSTACK Logo" 
+                        alt="Jasa pembuatan website murah di Malang - FIROSTACK" 
                         width={200} 
                         height={200} 
                         className="w-40 h-40 object-contain opacity-40"

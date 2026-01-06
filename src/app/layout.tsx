@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: "https://firostack.tech",
-    title: "FIROSTACK - Jasa Pembuatan Website & Aplikasi Terjangkau",
+    title: "FIROSTACK - Jasa Pembuatan Website & Aplikasi Di Bawah Satu Juta",
     description: "Wujudkan ide teknologi Anda dengan FIROSTACK! Jasa pembuatan website, aplikasi mobile, AI, dan IoT. Mulai dari di bawah Rp 1 Juta.",
     siteName: "FIROSTACK",
     images: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         url: "https://firostack.tech/og-image.png", // Ganti ke .png atau .jpg sesuai file Anda
         width: 1200,
         height: 630,
-        alt: "Firostack - Jasa Teknologi Terjangkau",
+        alt: "Firostack - #BuatTeknologiDiBawahSatuJuta",
       },
     ],
   },

@@ -15,7 +15,7 @@ export default function Jasa() {
     {
       icon: "📱",
       title: "Web Development", 
-      description: "Pembuatan website, e-commerce, dan sistem informasi",
+      description: "Jasa pembuatan website, landing page mahasiswa, e-commerce, dan sistem informasi murah",
       originalPrice: "Rp. 1.200.000",
       discountPrice: "Rp. 900.000"
     },

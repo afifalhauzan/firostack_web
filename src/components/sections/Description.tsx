@@ -102,7 +102,7 @@ export default function Description() {
                     >
                         <Img
                             src="/laptop.svg"
-                            alt="Hero Illustration"
+                            alt="Jasa pembuatan website murah di Malang untuk mahasiswa - teknologi di bawah satu juta"
                             width={400}
                             height={300}
                             className="relative z-10 w-80 h-80 md:w-96 md:h-96"
